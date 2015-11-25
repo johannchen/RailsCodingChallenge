@@ -35,6 +35,20 @@ class Cuboid
     overlap?(@z, @height, other.z, other.height)
   end
 
+  def rotates90(axis)
+    l,w,h = @length,@width,@height
+    if axis == 'x'
+      @width = h
+      @height = w
+    elsif axis == 'y'
+      @length = h
+      @height = l
+    else
+      @length = w
+      @width = l
+    end
+  end
+
   #END public methods that should be your starting point
   private
   # check intersect in one dimension or a straight line

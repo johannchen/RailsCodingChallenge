@@ -51,4 +51,20 @@ describe Cuboid do
       expect(c1.intersects?(c2)).to be true
     end
   end
+
+  describe "rotates90" do
+    let(:c) { Cuboid.new(0,0,0,1,2,3) }
+    it "rotates 90 degree along the x-axis" do
+      c.rotates90('x')
+      expect([c.length, c.width, c.height]).to eq([1,3,2])
+    end
+    it "rotates 90 degree along the y-axis" do
+      c.rotates90('y')
+      expect([c.length, c.width, c.height]).to eq([3,2,1])
+    end
+    it "rotates 90 degree along the z-axis" do
+      c.rotates90('z')
+      expect([c.length, c.width, c.height]).to eq([2,1,3])
+    end
+  end
 end
