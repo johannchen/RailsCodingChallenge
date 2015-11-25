@@ -35,17 +35,15 @@ class Cuboid
     overlap?(@z, @height, other.z, other.height)
   end
 
+  # rotates 90 degrees along axis
   def rotates90(axis)
     l,w,h = @length,@width,@height
     if axis == 'x'
-      @width = h
-      @height = w
+      @width,@height = h,w
     elsif axis == 'y'
-      @length = h
-      @height = l
+      @length,@height = h,l
     else
-      @length = w
-      @width = l
+      @length,@width = w,l
     end
   end
 
